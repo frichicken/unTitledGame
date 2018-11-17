@@ -5,7 +5,7 @@ using namespace std;
 
 const int coordinateX = 30;
 const int coordinateY = 18;
-
+isGameOver = false;
 
 int i, j;
 
@@ -77,6 +77,15 @@ void logic()
 	default:
 		break;
 	}
+	if (pointerX==coordinateX){
+	  if (pointerY == coordinateY || pointerY == 0){
+	  isGameOver = true;
+	  }
+	}
+	else if (pointerY == coordinateY){
+	 if (pointerX == coordinateX || pointerX==0)
+		 isGameOver = true;
+	}
 }
 
 void draw()
@@ -111,7 +120,6 @@ void draw()
 
 int main()
 {
-	isGameOver = false;
 	draw();
 	while (!isGameOver)
 	{
